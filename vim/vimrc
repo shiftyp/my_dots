@@ -1,0 +1,41 @@
+" Pathogen
+filetype off
+call pathogen#incubate()
+call pathogen#helptags()
+filetype plugin indent on
+" Enable sytax highlighting
+syntax enable
+" Set tab and shift widthds
+set tabstop=2
+set shiftwidth=2
+" Set list
+:set listchars=tab:▸\ 
+" Set line numbers
+set number
+" Set theme
+set background=dark
+set guifont=Consolas:h20
+if !has('gui_running')
+	let g:solarized_termtrans=1
+endif
+colorscheme solarized
+" Move the alt arrow keys
+:map ; <right>
+:map l <down>
+:map k <up>
+:map j <left>
+" Highlight serach terms
+set hlsearch
+" Map space to toggle search highlighting
+:noremap <Space> :set hlsearch! hlsearch?<CR>
+" Sets directory for swp files
+set directory=~/.tmp/
+" CloseTag plugin
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+" Conceal level
+" au FileType javascript setl conceallevel=2 concealcursor=nclet g:syntax_js=['function', 'semicolon', 'comma', 'return', 'this', 'proto']
+" Code Folding
+au FileType javascript setl fdm=marker fmr=/*,*/
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif

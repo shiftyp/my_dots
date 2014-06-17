@@ -1,0 +1,42 @@
+[submodule "vim/vim/bundle/closetag.vim"]
+	path = vim/vim/bundle/closetag.vim
+	url = https://github.com/vim-scripts/closetag.vim.git
+[submodule "vim/vim/bundle/jshint.vim"]
+	path = vim/vim/bundle/jshint.vim
+	url = https://github.com/walm/jshint.vim.git
+[submodule "vim/vim/bundle/nerdcommenter"]
+	path = vim/vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/vim/bundle/supertab"]
+	path = vim/vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "vim/vim/bundle/tagbar"]
+	path = vim/vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/vim/bundle/vim-coffee-script"]
+	path = vim/vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/vim/bundle/vim-colors-solarized"]
+	path = vim/vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/vim/bundle/vim-fugitive"]
+	path = vim/vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/vim/bundle/vim-javascript"]
+	path = vim/vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/vim/bundle/vim-less"]
+	path = vim/vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/vim/bundle/vim-literate-coffeescript"]
+	path = vim/vim/bundle/vim-literate-coffeescript
+	url = https://github.com/mintplant/vim-literate-coffeescript.git
+[submodule "vim/vim/bundle/vim-syntax-js"]
+	path = vim/vim/bundle/vim-syntax-js
+	url = https://github.com/drslump/vim-syntax-js.git
+[submodule "zsh/antigen"]
+	path = zsh/antigen
+	url = https://github.com/zsh-users/antigen.git
+[submodule "zsh/dircolors-solarized"]
+	path = zsh/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
