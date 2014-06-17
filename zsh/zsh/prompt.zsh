@@ -3,12 +3,8 @@ setopt prompt_subst
 
 # mode-aware arrow
 
-function p_arrow {
-  if [[ $KEYMAP = "vicmd" ]]; then
-    echo "%F{magenta}»%f"
-  else
-    echo "%F{cyan}»%f"
-  fi
+function p_rook {
+	echo "%F{cyan}♜%f"
 }
 
 # colored path
@@ -40,10 +36,10 @@ function p_envs {
   [[ -n $VIRTUAL_ENV ]] && envs+="♘ "
 
   [[ -n $envs ]] && ret+="%F{red}$envs%f"
-	[[ -n $SSH_CLIENT ]] && ret+=" %F{green}[%f`hostname`%F{green}]%f"
+	[[ -n $SSH_CLIENT ]] && ret+="%F{green}[%f`hostname`%F{green}]%f"
 	echo $ret
 }
 
 PROMPT='
-$(p_envs) $(p_colored_path)$(p_vcs) $(p_arrow) '
+$(p_envs) $(p_colored_path)$(p_vcs) $(p_rook)  '
 
