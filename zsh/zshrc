@@ -15,6 +15,9 @@ compinit -i
 promptinit
 colors
 
+# Vim bindings
+bindkey -v
+
 #history
 setopt hist_ignore_space
 setopt append_history
