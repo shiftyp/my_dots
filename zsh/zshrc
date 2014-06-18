@@ -41,6 +41,7 @@ sources=(
 	'path'
 	'colors'
 	'vcsinfo'
+	'title'
 	'prompt'
 	'completions'
 	'highlight'
