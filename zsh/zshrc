@@ -39,6 +39,7 @@ antigen apply
 # strict control over source order
 sources=(
 	'path'
+	'colors'
 	'vcsinfo'
 	'prompt'
 	'completions'

@@ -1,12 +1,13 @@
 # vcsinfo: thanks to github.com/sunaku/home/
 autoload -Uz vcs_info
 
-VCS_PROMPT=" %F{cyan}→ %F{green}%b%F{magenta}%u%f%c%m"
-AVCS_PROMPT="$VCS_PROMPT %F{cyan}∷%f %F{magenta}%a%f"
+VCS_PROMPT=" %F{cyan}→ ${GREEN}%b${RESET}${VIOLET}%u%c${RESET}%m"
+AVCS_PROMPT="$VCS_PROMPT ${BLUE}∷${RESET} ${MAGENTA}%a${RESET}"
 
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "+"
-zstyle ':vcs_info:*' unstagedstr "#"
+zstyle ':vcs_info:*' unstagedstr "-"
+zstyle ':vcs_info:*' bothstr "±"
 zstyle ':vcs_info:*' formats $VCS_PROMPT
 zstyle ':vcs_info:*' actionformats $AVCS_PROMPT
 zstyle ':vcs_info:*' enable git
@@ -45,13 +46,14 @@ function +vi-git-untracked(){
 function +vi-git-message(){
   if [[ -n ${hook_com[unstaged]} ]]; then
     if [[ -n ${hook_com[staged]} ]]; then
-      hook_com[unstaged]="${hook_com[unstaged]} "
+      hook_com[unstaged]="±"
+			hook_com[staged]=""
     else
       hook_com[unstaged]="${hook_com[unstaged]}"
     fi
   else
     if [[ -n ${hook_com[staged]} ]]; then
-      hook_com[staged]=" ${hook_com[staged]}"
+      hook_com[staged]="${hook_com[staged]}"
     fi
   fi
 }

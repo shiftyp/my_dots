@@ -1,16 +1,14 @@
 # prompt
 setopt prompt_subst
 
-# mode-aware arrow
-
 function p_rook {
-	echo "%F{cyan}♜%f"
+	echo "%F{red}♜%f"
 }
 
 # colored path
 
 function p_colored_path {
-  local slash="%F{cyan}/%f"
+  local slash="${BLUE}/${RESET}"
   echo "${${PWD/#$HOME/~}//\//$slash}"
 }
 
@@ -28,18 +26,23 @@ function p_vcs {
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-function p_envs {
-  local envs
-	local ret
-  [[ -n $SSH_CLIENT ]]  && envs+="♕ "
-	[[ -z $SSH_CLIENT ]]  && envs+="♔ "
-  [[ -n $VIRTUAL_ENV ]] && envs+="♘ "
+function p_host {
+	local host
+	if [[ -n $REGULAR_HOSTNAMES ]]; then
+		for (( i = 0; i < ${#REGULAR_HOSTNAMES[@]}; i++ )); do
+			if [ "${REGULAR_HOSTNAMES[$i]}" = `hostname` ]; then
+				host="${RED}${REGULAR_HOST_SYMBOLS[$i]}${RESET} ";
+			fi
+		done
+	fi
+	[[ -z $host ]] && host="${RED}♘${RESET}  ${BOLD}${ORANGE}`hostname`${RESET}"
+	echo $host
+}
 
-  [[ -n $envs ]] && ret+="%F{red}$envs%f"
-	[[ -n $SSH_CLIENT ]] && ret+="%F{green}[%f`hostname`%F{green}]%f"
-	echo $ret
+function p_time {
+	echo "${YELLOW}`date +%H:%M`${RESET}"
 }
 
 PROMPT='
-$(p_envs) $(p_colored_path)$(p_vcs) $(p_rook)  '
-
+┌─ $(p_host) $(p_time) $(p_colored_path)$(p_vcs)
+└─ $(p_rook)  '
