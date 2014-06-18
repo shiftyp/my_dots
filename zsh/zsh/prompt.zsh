@@ -28,15 +28,11 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 function p_host {
 	local host
-	if [[ -n $REGULAR_HOSTNAMES ]]; then
-		for (( i = 0; i < ${#REGULAR_HOSTNAMES[@]}; i++ )); do
-			if [ "${REGULAR_HOSTNAMES[$i]}" = `hostname` ]; then
-				host="${RED}${REGULAR_HOST_SYMBOLS[$i]}${RESET} ";
-			fi
-		done
+	if [[ -n $HOST_SYMBOL ]]; then
+		echo "${RED}${HOST_SYMBOL}${RESET} " 	
+	else
+		echo "${RED}♘${RESET} ${BOLD}${ORANGE}`hostname`${RESET}"
 	fi
-	[[ -z $host ]] && host="${RED}♘${RESET}  ${BOLD}${ORANGE}`hostname`${RESET}"
-	echo $host
 }
 
 function p_time {
