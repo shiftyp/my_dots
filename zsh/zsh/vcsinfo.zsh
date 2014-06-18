@@ -1,7 +1,7 @@
 # vcsinfo: thanks to github.com/sunaku/home/
 autoload -Uz vcs_info
 
-VCS_PROMPT=" %F{cyan}→ ${GREEN}%b${RESET}${VIOLET}%u%c${RESET}%m"
+VCS_PROMPT=" ${CYAN}→${RESET} ${GREEN}%b${RESET}${VIOLET}%u%c${RESET}%m"
 AVCS_PROMPT="$VCS_PROMPT ${BLUE}∷${RESET} ${MAGENTA}%a${RESET}"
 
 zstyle ':vcs_info:*' check-for-changes true
