@@ -29,8 +29,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 function p_host {
 	local host
 	if [[ -n $REGULAR_HOSTNAMES ]]; then
-		for (( i = 0; i < ${#REGULAR_HOSTNAMES[@]}; i++ )); do
-			if [ "${REGULAR_HOSTNAMES[$i]}" = `hostname` ]; then
+		for (( i = 1; i < ${#REGULAR_HOSTNAMES[@]} + 1; i++ )); do
+			if [ "${REGULAR_HOSTNAMES[$i]}" = "`hostname`" ]; then
 				host="${RED}${REGULAR_HOST_SYMBOLS[$i]}${RESET} ";
 			fi
 		done
