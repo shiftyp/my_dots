@@ -1,8 +1,8 @@
 # vcsinfo: thanks to github.com/sunaku/home/
 autoload -Uz vcs_info
 
-VCS_PROMPT=" ${CYAN}→${RESET} ${GREEN}%b${RESET}${VIOLET}%u%c${RESET}%m"
-AVCS_PROMPT="$VCS_PROMPT ${BLUE}∷${RESET} ${MAGENTA}%a${RESET}"
+VCS_PROMPT=" ${CYAN}→${RESET} ${VIOLET}%b${RESET}${RED}%u${RESET}${GREEN}%c${RESET}%m"
+AVCS_PROMPT="$VCS_PROMPT ${BLUE}∷${RESET} ${VIOLET}%a${RESET}"
 
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "+"
@@ -38,7 +38,7 @@ function +vi-git-untracked(){
   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
     git status --porcelain | grep '??' &> /dev/null ; then
     # This will show the marker if there are any untracked files in repo.
-    hook_com[branch]="%F{magenta}.%F{green}${hook_com[branch]}%f"
+    hook_com[branch]="${MAGENTA}.${RESET}${VIOLET}${hook_com[branch]}${RESET}"
   fi
 }
 
