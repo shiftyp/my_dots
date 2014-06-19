@@ -2,12 +2,11 @@
 autoload -Uz vcs_info
 
 VCS_PROMPT=" ${CYAN}→${RESET} ${VIOLET}%b${RESET}${RED}%u${RESET}${GREEN}%c${RESET}%m"
-AVCS_PROMPT="$VCS_PROMPT ${BLUE}∷${RESET} ${VIOLET}%a${RESET}"
+AVCS_PROMPT="$VCS_PROMPT ${VIOLET}%a${RESET}"
 
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "+"
 zstyle ':vcs_info:*' unstagedstr "-"
-zstyle ':vcs_info:*' bothstr "±"
 zstyle ':vcs_info:*' formats $VCS_PROMPT
 zstyle ':vcs_info:*' actionformats $AVCS_PROMPT
 zstyle ':vcs_info:*' enable git
@@ -47,7 +46,7 @@ function +vi-git-message(){
   if [[ -n ${hook_com[unstaged]} ]]; then
     if [[ -n ${hook_com[staged]} ]]; then
       hook_com[unstaged]="±"
-			hook_com[staged]=""
+      hook_com[staged]=""
     else
       hook_com[unstaged]="${hook_com[unstaged]}"
     fi
