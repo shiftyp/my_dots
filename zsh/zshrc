@@ -55,3 +55,9 @@ done
 if [[ -e $DOTSPATH/zsh/zsh/custom.zsh ]]; then
   source $DOTSPATH/zsh/zsh/custom.zsh
 fi
+
+source ~/.nvm/nvm.sh
+source ~/.rvm/scripts/rvm
+
+nvm use 0.10
+rvm use 2.1.2

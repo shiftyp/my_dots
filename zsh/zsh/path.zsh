@@ -8,7 +8,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
 fi
 
 path=(~/.rvm/bin $path)
-path=(~/.nvm/bin $path)
 
 # prune paths
 path=($^path(N))
