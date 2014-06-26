@@ -43,3 +43,9 @@
 [submodule "vim/vim/bundle/vim-mustache-handlebars"]
 	path = vim/vim/bundle/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
+[submodule "vim/vim/bundle/ctrlp.vim"]
+	path = vim/vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/vim/bundle/Rainbow-Parenthesis"]
+	path = vim/vim/bundle/Rainbow-Parenthesis
+	url = https://github.com/vim-scripts/Rainbow-Parenthesis.git
