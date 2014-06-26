@@ -11,6 +11,10 @@ set shiftwidth=2
 " Set list
 :set listchars=tab:▸\ 
 " Set line numbers
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+	set mouse=a
+endif
 set number
 " Set theme
 set background=dark
