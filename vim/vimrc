@@ -42,6 +42,10 @@ set hlsearch
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_less_checkers = ['lessc']
 let g:syntastic_handlebars_checkers = ['handlebars']
+" Emmet configuration
+let g:user_emmet_install_global = 0
+autocmd FileType html,hbs,css EmmetInstall
+let g:user_emmet_leader_key='<C-E>'
 " Map space to toggle search highlighting
 :noremap <Space> :set hlsearch! hlsearch?<CR>
 " Sets directory for swp files
