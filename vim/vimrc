@@ -38,6 +38,8 @@ colorscheme solarized
 :map j <left>
 " Highlight serach terms
 set hlsearch
+" CTRLP
+let g:ctrlp_max_files=0
 " syntastic checkers
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_less_checkers = ['lessc']
@@ -46,6 +48,16 @@ let g:syntastic_handlebars_checkers = ['handlebars']
 let g:user_emmet_install_global = 0
 autocmd FileType html,hbs,css EmmetInstall
 let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_settings = {
+  \  'xml' : {
+  \    'extends' : 'html',
+  \  },
+  \  'hbs' : {
+  \    'extends' : 'html',
+  \  }
+  \}
+" Mustache / Handlebars
+let g:mustache_abbreviations = 1
 " Map space to toggle search highlighting
 :noremap <Space> :set hlsearch! hlsearch?<CR>
 " Sets directory for swp files
