@@ -64,3 +64,6 @@
 [submodule "vim/vim/bundle/emmet-vim"]
 	path = vim/vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim/vim/bundle/vim-json"]
+	path = vim/vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json.git
