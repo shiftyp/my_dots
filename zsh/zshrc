@@ -30,7 +30,7 @@ export VISUAL=vim
 source $DOTSPATH/zsh/antigen/antigen.zsh
 
 antigen bundles <<EOBUNDLES
-  zsh-users/zsh-syntax-highlighting
+	zsh-users/zsh-syntax-highlighting
 	zsh-users/zsh-completions src
 EOBUNDLES
 
@@ -49,11 +49,11 @@ sources=(
 )
 
 for src in $sources; do
-  source $DOTSPATH/zsh/zsh/$src.zsh
+	source $DOTSPATH/zsh/zsh/$src.zsh
 done
 
 if [[ -e $DOTSPATH/zsh/zsh/custom.zsh ]]; then
-  source $DOTSPATH/zsh/zsh/custom.zsh
+	source $DOTSPATH/zsh/zsh/custom.zsh
 fi
 
 source ~/.nvm/nvm.sh
