@@ -49,15 +49,46 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,hbs,css EmmetInstall
 let g:user_emmet_leader_key='<C-E>'
 let g:user_emmet_settings = {
-  \  'xml' : {
-  \    'extends' : 'html',
-  \  },
-  \  'hbs' : {
-  \    'extends' : 'html',
-  \  }
-  \}
+	\	'xml' : {
+	\		 'extends' : 'html',
+	\	},
+	\	'hbs' : {
+	\		 'extends' : 'html',
+	\	}
+	\}
 " Mustache / Handlebars
 let g:mustache_abbreviations = 1
+" Lightline
+let g:lightline = {
+	\'colorscheme': 'solarized',
+	\	'active': {
+	\		'left': [['mode','paste'],['fugitive','filename','modified']],
+	\ 	'right': [['syntastic','lineinfo'],['percent'],['fileformat','fileencoding','filetype']]
+	\	},
+	\	'component': {
+	\		'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+	\		'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+	\	},
+	\	'component_visible_condition': {
+	\		'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
+	\		'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+	\	},
+	\	'component_expand': {
+	\   'syntastic': 'SyntasticStatuslineFlag',
+	\ },
+	\ 'component_type': {
+	\   'syntastic': 'error',
+	\ },
+	\}
+augroup AutoSyntastic
+	autocmd!
+	autocmd BufWritePost *.js call s:syntastic()
+augroup END
+function! s:syntastic()
+	SyntasticCheck
+	call lightline#update()
+endfunction
+set laststatus=2
 " Map space to toggle search highlighting
 :noremap <Space> :set hlsearch! hlsearch?<CR>
 " Sets directory for swp files
