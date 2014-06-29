@@ -6,10 +6,10 @@ snippet proto
 	};
 # Prototype Apply
 snippet protoapp
-	${1:class_name}.prototype.apply(${2:this}, ${3:arguments});
+	${1:class_name}.prototype.${2:method}.apply(${3:this}, ${4:arguments});
 # Prototype Call
 snippet protocall
-	${1:class_name}.prototype.call(${2:this}, ${3:args});
+	${1:class_name}.prototype.${2:method}call(${3:this}, ${4:args});
 # Function
 snippet fun
 	function ${1:function_name}(${2:argument}) {
