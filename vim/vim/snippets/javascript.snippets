@@ -1,4 +1,4 @@
-# Many of these snippets are taken from https://github.com/honza/vim-snippets
+# Many of the vanilla JS snippets are taken from https://github.com/honza/vim-snippets
 # Prototype
 snippet proto
 	${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
@@ -129,28 +129,138 @@ snippet jsonp
 # JSON.stringify
 snippet jsons
 	JSON.stringify(${0:object});
-# Lodash
+
+## Lodash
 # _
 snippet _
 	_(${1:target}).${2:method}
+### Arrays / Collections
 # _.forEach
 snippet _fore
+	_.forEach(${1:target}, ${2:func});
+# _.forEach anonymous function
+snippet _forea
 	_.forEach(${1:target}, function(${2:item}){
-		${3:body}
+		${3}
 	});
-# _.forOwn
-snippet _foro
-	_.forOwn(${1:target}, function(${2:item}){
-		${3:body}
+# _.forEachRight
+snippet _forer
+	_.forEachRight(${1:target}, ${2:func});
+# _.forEach anonymous function
+snippet _forera
+	_.forEachRight(${1:target}, function(${2:item}){
+		${3}
 	});
 # _.map
 snippet _map
+	_.map(${1:target}, ${2:func});
+# _.map anonymous function
+snippet _mapa
 	_.map(${1:target}, function(${2:item}){
-		${3:body}
+		${3}
 	});
+# _.findIndex
+snippet _findi
+	_.findIndex(${1:target}, ${2:func});
+# _.findIndex anonymous function
+snippet _findia
+	_.findIndex(${1:target}, function(${2:val}){
+		${3}
+	});
+# _.findLastIndex
+snippet _findli
+	_.findLastIndex(${1:target}, ${2:func});
+# _.findLastIndex anonymous function
+snippet _findlia
+	_.findLastIndex(${1:target}, function(${2:val}){
+		${3}
+	});
+# _.indexOf
+snippet _idxo
+	_.indexOf(${1:target}, ${2:val});
+# _.lastIndexOf
+snippet _lidxo
+	_.lastIndexOf(${1:target}, ${2:val});
+# _.contains
+snippet _cont
+	_.contains(${1:target}, ${2:func});
+# _.contains anonymous function
+snippet _conta
+	_.contains(${1:target}, function(${2:val}){
+		${3}}
+	});
+# _.filter
+snippet _filt
+	_.filter(${1:target}, ${2:func});
+# _.filter anonymous function
+snippet _filta
+	_.filter(${1:target}, function(${2:val}){
+		${3}}	
+	});
+# _.find
+snippet _find
+	_.find(${1:target}, ${2:func});
+# _.find anonymous function
+snippet _finda
+	_.find(${1:target}, function(${2:val}){
+		${3}	
+	});
+# _.findLast
+snippet _findl
+	_.findLast(${1:target}, ${2:func});
+# _.findLast anonymous function
+snippet _findla
+	_.findLast(${1:target}, function(${2:val}){
+		${3}
+	});
+# _.invoke
+snippet _inv
+	_.invoke(${1:target}, ${2:func});
+# _.invoke anonymous function
+snippet _inva
+	_.invoke(${1:target}, function(${2:val}){
+		${3}
+	});
+### Objects
+# _.forOwn
+snippet _foro
+	_.forOwn(${1:target}, ${2:func});
+# _.forOwn anonymous function
+snippet _foroa
+	_.forOwn(${1:target}, function(${2:item}){
+		${3}
+	});
+# _.extend
+snippet _ex
+	_.extend(${1:obj1}, ${2:obj2});
+# _.transform
+snippet _trans
+	_.transform(${1:target}, ${2:func});
+# _.transform anonymous function
+snippet _transa
+	_.transform(${1:target}, function(${2:result}, ${3:val}, ${4:key}){
+		${5}
+	});
+# _.defaults
+snippet _def
+	_.defaults(${1:obj1}, ${2:obj2});
+### Functions
 # _.bind
 snippet _bind
-	_.bind(${1:target}, ${2:this});
+	_.bind(${1:func}, ${2:this});
+# _.bind anonymous function
+snippet _binda
+	_.bind(function(${1:args}){
+		${3}
+	}, ${2:this});
 # _.bindKey
 snippet _bindk
 	_.bindKey(${1:this}, '${2:prop}');
+# _.partial
+snippet _part
+	_.partial(${1:func}, ${2:args});
+# _.partial anonymous function
+snippet _parta
+	_.partial(function(${1:args}){
+		${3}
+	}, ${2:args});
