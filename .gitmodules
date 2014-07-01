@@ -79,3 +79,6 @@
 [submodule "vim/vim/bundle/vim-addon-mw-utils"]
 	path = vim/vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/vim/bundle/vim-node"]
+	path = vim/vim/bundle/vim-node
+	url = https://github.com/moll/vim-node.git
