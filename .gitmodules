@@ -85,3 +85,6 @@
 [submodule "vim/vim/bundle/gundo.vim"]
 	path = vim/vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
+[submodule "vim/vim/bundle/nerdtree"]
+	path = vim/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
