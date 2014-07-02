@@ -43,9 +43,6 @@
 [submodule "vim/vim/bundle/vim-mustache-handlebars"]
 	path = vim/vim/bundle/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
-[submodule "vim/vim/bundle/ctrlp.vim"]
-	path = vim/vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/vim/bundle/Rainbow-Parenthesis"]
 	path = vim/vim/bundle/Rainbow-Parenthesis
 	url = https://github.com/vim-scripts/Rainbow-Parenthesis.git
@@ -91,3 +88,18 @@
 [submodule "vim/vim/bundle/vim-commentary"]
 	path = vim/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/vim/bundle/unite.vim"]
+	path = vim/vim/bundle/unite.vim
+	url = https://github.com/Shougo/unite.vim.git
+[submodule "vim/vim/bundle/neomru.vim"]
+	path = vim/vim/bundle/neomru.vim
+	url = https://github.com/Shougo/neomru.vim
+[submodule "vim/vim/bundle/vimproc.vim"]
+	path = vim/vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "vim/vim/bundle/unite-git_grep"]
+	path = vim/vim/bundle/unite-git_grep
+	url = https://github.com/sgur/unite-git_grep.git
+[submodule "vim/vim/bundle/ctrlp.vim"]
+	path = vim/vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git

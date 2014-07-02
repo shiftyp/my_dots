@@ -61,10 +61,20 @@ augroup unimpaired_paste
         \   unlet s:mouse |
         \ endif
 augroup END
-" Highlight serach terms
+" Highlight search terms
 set hlsearch
 " CTRLP
 let g:ctrlp_max_files=0
+" Unite
+nnoremap <silent> <Leader>m :Unite -direction=below -buffer-name=recent -winheight=10 file_mru<cr>
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>y :Unite -direction=below -buffer-name=yank history/yank<CR>
+nnoremap <Leader>f :Unite -direction=below vcs_grep<cr>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#source('file_rec/async','sorters','sorter_rank')
+" call unite#custom#source('file_rec,file_rec/async','ignore_pattern','\(.*\.git\/\|.*node_modules\/.*\|.*build\/.*\)')
+nnoremap <Leader>o :Unite -direction=below -start-insert -buffer-name=files -winheight=10 file_rec/async<cr>
 " syntastic checkers
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_less_checkers = ['recess']
