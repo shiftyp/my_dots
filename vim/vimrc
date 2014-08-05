@@ -40,33 +40,39 @@ colorscheme solarized
 :map j <left>
 " yo and yO from unimpaired.vim https://github.com/tpope/vim-unimpaired
 function! s:setup_paste() abort
-  let s:paste = &paste
-  let s:mouse = &mouse
-  set paste
-  set mouse=
+	let s:paste = &paste
+	let s:mouse = &mouse
+	set paste
+	set mouse=
 endfunction
 
 nnoremap <silent> <Plug>unimpairedPaste :call <SID>setup_paste()<CR>
 
-nnoremap <silent> yo  :call <SID>setup_paste()<CR>o
-nnoremap <silent> yO  :call <SID>setup_paste()<CR>O
+nnoremap <silent> yo	:call <SID>setup_paste()<CR>o
+nnoremap <silent> yO	:call <SID>setup_paste()<CR>O
 
 augroup unimpaired_paste
-  autocmd!
-  autocmd InsertLeave *
-        \ if exists('s:paste') |
-        \   let &paste = s:paste |
-        \   let &mouse = s:mouse |
-        \   unlet s:paste |
-        \   unlet s:mouse |
-        \ endif
+	autocmd!
+	autocmd InsertLeave *
+				\ if exists('s:paste') |
+				\		let &paste = s:paste |
+				\		let &mouse = s:mouse |
+				\		unlet s:paste |
+				\		unlet s:mouse |
+				\ endif
 augroup END
 " Highlight search terms
 set hlsearch
 " CTRLP
 let g:ctrlp_max_files=0
+set wildignore+=*/.git/*,*/node_modules/*
+let g:ctrlp_prompt_mappings = {
+	\ 'AcceptSelection("e")': [],
+	\ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
+	\ }
 " Unite
 nnoremap <silent> <Leader>m :Unite -direction=below -buffer-name=recent -winheight=10 file_mru<cr>
+nnoremap <silent> <Leader>b :Unite -direction=below -winheight=10 buffer<cr>
 let g:unite_source_history_yank_enable = 1
 nnoremap <leader>y :Unite -direction=below -buffer-name=yank history/yank<CR>
 nnoremap <Leader>f :Unite -direction=below vcs_grep<cr>
@@ -98,7 +104,7 @@ let g:lightline = {
 	\'colorscheme': 'solarized',
 	\	'active': {
 	\		'left': [['mode','paste'],['fugitive','filename','modified']],
-	\ 	'right': [['syntastic','lineinfo'],['percent'],['fileformat','fileencoding','filetype']]
+	\		'right': [['syntastic','lineinfo'],['percent'],['fileformat','fileencoding','filetype']]
 	\	},
 	\	'component': {
 	\		'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
@@ -109,10 +115,10 @@ let g:lightline = {
 	\		'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
 	\	},
 	\	'component_expand': {
-	\   'syntastic': 'SyntasticStatuslineFlag',
+	\		'syntastic': 'SyntasticStatuslineFlag',
 	\ },
 	\ 'component_type': {
-	\   'syntastic': 'error',
+	\		'syntastic': 'error',
 	\ },
 	\}
 augroup AutoSyntastic
