@@ -42,7 +42,7 @@ sources=(
 	'colors'
 	'vcsinfo'
 	'title'
-	'prompt'
+	'pure'
 	'completions'
 	'highlight'
 	'functions'

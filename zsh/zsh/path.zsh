@@ -7,7 +7,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
 	manpath=(/usr/local/opt/coreutils/libexec/gnuman $path)
 fi
 
-path=(~/.rvm/bin $path)
+path=(~/.rvm/gems/ruby-1.9.3-p484/bin /usr/local/git/bin $path)
 
 # prune paths
 path=($^path(N))

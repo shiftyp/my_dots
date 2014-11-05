@@ -1,7 +1,7 @@
 # vcsinfo: thanks to github.com/sunaku/home/
 autoload -Uz vcs_info
 
-VCS_PROMPT=" ${CYAN}→${RESET} ${VIOLET}%b${RESET}${RED}%u${RESET}${GREEN}%c${RESET}%m"
+VCS_PROMPT="${VIOLET}%b${RESET}${RED}%u${RESET}${GREEN}%c${RESET}%m"
 AVCS_PROMPT="$VCS_PROMPT ${BLUE}%a${RESET}"
 
 zstyle ':vcs_info:*' check-for-changes true
@@ -45,8 +45,8 @@ function +vi-git-untracked(){
 function +vi-git-message(){
 	if [[ -n ${hook_com[unstaged]} ]]; then
 		if [[ -n ${hook_com[staged]} ]]; then
-			hook_com[unstaged]="±"
-			hook_com[staged]=""
+			hook_com[unstaged]="+"
+			hook_com[staged]="-"
 		else
 			hook_com[unstaged]="${hook_com[unstaged]}"
 		fi
