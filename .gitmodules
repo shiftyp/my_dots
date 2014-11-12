@@ -106,3 +106,18 @@
 [submodule "zsh/pure"]
 	path = zsh/pure
 	url = https://github.com/sindresorhus/pure.git
+[submodule "vim/vim/bundle/vim-abolish"]
+	path = vim/vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/vim/bundle/vim-unimpaired"]
+	path = vim/vim/bundle/vim-unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "vim/vim/bundle/vim-yankstack"]
+	path = vim/vim/bundle/vim-yankstack
+	url = https://github.com/maxbrunsfeld/vim-yankstack.git
+[submodule "vim/vim/bundle/vim-indent-guides"]
+	path = vim/vim/bundle/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule "vim/vim/bundle/MatchTag"]
+	path = vim/vim/bundle/MatchTag
+	url = https://github.com/gregsexton/MatchTag

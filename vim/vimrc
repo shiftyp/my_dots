@@ -5,6 +5,8 @@ call pathogen#helptags()
 filetype plugin indent on
 " Enable sytax highlighting
 syntax enable
+" Hide buffers instead of closing them
+set hidden
 " Set tab and shift widthds
 set tabstop=2
 set shiftwidth=2
@@ -38,6 +40,10 @@ endif
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 let g:solarized_termcolors=16
+" indent guides
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=base02 ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=base03 ctermbg=0
 colorscheme solarized
 " Move the alt arrow keys
 :map ; <right>
@@ -146,6 +152,13 @@ autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bu
 " Conceal level
 " au FileType javascript setl conceallevel=2 concealcursor=nclet g:syntax_js=['function', 'semicolon', 'comma', 'return', 'this', 'proto']
 " Code Folding
-au FileType javascript setl fdm=marker fmr=/*,*/
-autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
-autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+" au FileType javascript setl fdm=marker fmr=/*,*/
+" autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+" autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+" gundo
+let g:gundo_preview_bottom=1
+nnoremap <F5> :GundoToggle<CR>
+" yankstack
+let g:yankstack_map_keys = 0
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
