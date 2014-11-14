@@ -162,3 +162,6 @@ nnoremap <F5> :GundoToggle<CR>
 let g:yankstack_map_keys = 0
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+" git gutter
+let g:gitgutter_realtime = 0
+autocmd CursorMoved,CursorMovedI * GitGutterAll
