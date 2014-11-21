@@ -122,6 +122,24 @@ prompt_pure_precmd() {
 	unset cmd_timestamp
 }
 
+function zle-line-init zle-keymap-select {
+	prompt_set
+	zle reset-prompt
+}
+
+prompt_set() {
+	local prompt_char
+
+	case ${KEYMAP} in
+		(vicmd)      prompt_char="»" ;;
+		(main|viins) prompt_char="❯" ;;
+		(*)          prompt_char="❯" ;;
+	esac
+
+	# prompt turns red if the previous command didn't exit with 0
+	PROMPT="%(?.%F{cyan}.%F{red})$prompt_char%f "
+}
+
 
 prompt_pure_setup() {
 	# prevent percentage showing up
@@ -137,12 +155,14 @@ prompt_pure_setup() {
 	add-zsh-hook precmd prompt_pure_precmd
 	add-zsh-hook preexec prompt_pure_preexec
 
+	zle -N zle-line-init
+	zle -N zle-keymap-select
+
 	# zstyle ':vcs_info:*' enable git
 	# zstyle ':vcs_info:git*' formats ' %b'
 	# zstyle ':vcs_info:git*' actionformats ' %b|%a'
-
-	# prompt turns red if the previous command didn't exit with 0
-	PROMPT='%(?.%F{cyan}.%F{red})❯%f '
+	
+	prompt_set
 }
 
 prompt_pure_setup "$@"
