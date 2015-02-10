@@ -77,7 +77,18 @@ augroup END
 set hlsearch
 " CTRLP
 let g:ctrlp_max_files=0
-set wildignore+=*/.git/*,*/node_modules/*
+
+set wildmenu
+set wildmode=full
+set wildignore+=*.class
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl                            " compiled spelling word lists
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.DS_Store                       " OSX bullshit
+set wildignore+=*.pyc                            " Python byte code
+
 let g:ctrlp_prompt_mappings = {
 	\ 'AcceptSelection("e")': [],
 	\ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
@@ -87,7 +98,8 @@ nnoremap <silent> <Leader>m :Unite -direction=below -buffer-name=recent -winheig
 nnoremap <silent> <Leader>b :Unite -direction=below -winheight=10 buffer<cr>
 let g:unite_source_history_yank_enable = 1
 nnoremap <leader>y :Unite -direction=below -buffer-name=yank history/yank<CR>
-nnoremap <Leader>f :Unite -direction=below vcs_grep<cr>
+nnoremap <Leader>g :Unite -direction=below vcs_grep<cr>
+nnoremap <Leader>f :Unite -direction=below git_cached<cr>
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#source('file_rec/async','sorters','sorter_rank')
