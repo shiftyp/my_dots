@@ -46,9 +46,6 @@
 [submodule "vim/vim/bundle/Rainbow-Parenthesis"]
 	path = vim/vim/bundle/Rainbow-Parenthesis
 	url = https://github.com/vim-scripts/Rainbow-Parenthesis.git
-[submodule "vim/vim/bundle/rainbow_parenthesis.vim"]
-	path = vim/vim/bundle/rainbow_parenthesis.vim
-	url = https://github.com/kien/rainbow_parentheses.vim.git
 [submodule "vim/vim/bundle/Conque-Shell"]
 	path = vim/vim/bundle/Conque-Shell
 	url = https://github.com/vim-scripts/Conque-Shell
@@ -124,3 +121,12 @@
 [submodule "vim/vim/bundle/unite-git"]
 	path = vim/vim/bundle/unite-git
 	url = https://github.com/yuku-t/unite-git.git
+[submodule "vim/vim/bundle/vim-go"]
+	path = vim/vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "vim/vim/bundle/yajs.vim"]
+	path = vim/vim/bundle/yajs.vim
+	url = https://github.com/othree/yajs.vim.git
+[submodule "vim/vim/bundle/Vundle.vim"]
+	path = vim/vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git

@@ -1,2 +1,4 @@
 zsh/zsh/custom.zsh
 vim/vim/.netrwhist
+vim/vim/bundle/*
+!vim/vim/bundle/Vundle.vim
