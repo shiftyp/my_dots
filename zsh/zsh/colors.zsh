@@ -37,8 +37,13 @@ if tput setaf 1 &> /dev/null; then
 	fi
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
-	SITM=$(tput sitm)
-	RITM=$(tput ritm)
+	if [[ "$TERM" == "xterm-256color-italics" ]] then
+		SITM=$(tput sitm)
+		RITM=$(tput ritm)
+	else
+		SITM=""
+		RITM=""
+	fi
 else
 	# Linux console colors. I don't have the energy
 	# to figure out the Solarized values
