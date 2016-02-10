@@ -37,7 +37,7 @@ if tput setaf 1 &> /dev/null; then
 	fi
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
-	if [[ "$TERM" == "xterm-256color-italics" ]] then
+	if [[ "$TERM" == "xterm-256color-italic" ]] then
 		SITM=$(tput sitm)
 		RITM=$(tput ritm)
 	else
