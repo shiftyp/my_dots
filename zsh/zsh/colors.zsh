@@ -37,6 +37,8 @@ if tput setaf 1 &> /dev/null; then
 	fi
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
+	SITM=$(tput sitm)
+	RITM=$(tput ritm)
 else
 	# Linux console colors. I don't have the energy
 	# to figure out the Solarized values
