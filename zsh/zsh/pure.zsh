@@ -98,7 +98,7 @@ prompt_pure_precmd() {
 	# git info
 	vcs_info
 
-	local prompt_pure_preprompt="\n%F{yellow}`prompt_pure_cmd_exec_time`%f`p_colored_path` `p_host` `p_vcs` "
+	local prompt_pure_preprompt="%F{green}\n$affirmation%f %F{yellow}`prompt_pure_cmd_exec_time`%f`p_colored_path` `p_vcs` "
 
 	# check async if there is anything to pull
 	(( ${PURE_GIT_PULL:-1} )) && {

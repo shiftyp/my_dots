@@ -1,39 +1,53 @@
 todopath=~/code/todos
 
+alias todo="todo.sh $@"
+
 printQuoted() {
 	printf %s "$(LC_ALL=C sed 's/["]/\\"/g' <<< "$*")"
 }
 
-todoPush() {
-	git push origin master 2> /dev/null
+pull() {
+	git pull origin master > /dev/null 2>&1
 	if [ "$?" -eq "0" ]; then
-		echo "Changes Pushed"
+		out="$out 📭 "
 	else
-		echo "Push Failed"
+		out="$out ❌ "
 	fi
-	cd - >> /dev/null
 }
 
-todoCommit() {
+push() {
+	git push origin master > /dev/null 2>&1
+	if [ "$?" -eq "0" ]; then
+		out="$out 📫 "
+	else
+		out="$out ❌ "
+	fi
+}
+
+commit() {
 	git add .
-	git commit -m "$1" 2> /dev/null
+	git commit -m "$1" > /dev/null 2>&1
 	if [ "$?" -eq "0" ]; then
-		echo "Changes Committed"
+		out="$out 📬 "
 	else
-		echo "Commit Failed"
+		out="$out ❌ "
 	fi
 }
-
-todo.sh $@;
 
 cd $todopath >> /dev/null
 
+pull
+
+todo
+
 if git diff-index --quiet HEAD --; then
-	echo "No changes to commit"
+	 out="$out 🙆 "
 else
-	todoCommit "`printQuoted $@`"
-	todoPush
+	commit "$(printQuoted $@)"
+	push
 fi
+
+echo "GIT$out"
 
 cd - >> /dev/null
 
