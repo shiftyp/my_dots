@@ -65,3 +65,5 @@ if [[ -e ~/.rvm/scripts/rvm ]]; then
 	source ~/.rvm/scripts/rvm
 	rvm use 2.1.2 > /dev/null
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
